@@ -1,0 +1,11 @@
+<div class="search-section">
+  <div class="search-box">
+    <input
+      type="text"
+      placeholder="Buscar servicio..."
+      [value]="searchTerm()"
+      (input)="onInputChange($event)"
+      (keyup.enter)="onSearch()">
+    <button (click)="onSearch()"><i>🔍</i></button>
+  </div>
+</div>

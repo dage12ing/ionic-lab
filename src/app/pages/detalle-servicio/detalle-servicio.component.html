@@ -1,3 +1,30 @@
-<p>
-  detalle-servicio works!
-</p>
+<app-header />
+<app-breadcrumb />
+<section class="service-detail">
+  <h2>{{ serviceName() }}</h2>
+  <img [src]="serviceImage()" alt="Servicio de limpieza {{ serviceName() }}" />
+
+  <p class="service-info">
+    {{ serviceDescription() }}
+  </p>
+
+  <div class="service-meta">
+    <div class="meta-box">
+      <h4>Precio</h4>
+      <p>${{ servicePrice() }}</p>
+    </div>
+    <div class="meta-box">
+      <h4>Horario</h4>
+      <p>{{ serviceSchedule() }}</p>
+    </div>
+  </div>
+
+  <div class="booking-section">
+    <h3>Reserva tu limpieza</h3>
+    <form class="booking-form">
+      <input type="date" required />
+      <input type="time" required />
+      <button type="submit">Reservar</button>
+    </form>
+  </div>
+</section>

@@ -1,3 +1,15 @@
-<p>
-  catalogo works!
-</p>
+<app-header />
+<app-breadcrumb />
+<app-searchbar (searchChange)="onSearch($event)" />
+
+<section class="services">
+  @for (service of servicesList(); track $index) {
+    <app-services-card
+      [id]="service.id"
+      [name]="service.name"
+      [description]="service.description"
+      [image]="service.image"
+    />
+  }
+</section>
+<app-floating-button />
