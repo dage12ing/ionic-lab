@@ -1,0 +1,41 @@
+<ion-content class="ion-padding">
+  <div class="login-container">
+    <img src="assets/img/Logo_inicial.jpg" alt="Logo Empresa" class="logo" />
+
+    <h2>EASY CLEANING</h2>
+    <p>Inicia sesión para acceder a nuestros servicios</p>
+
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+
+      <ion-item>
+        <ion-input
+          type="email"
+          formControlName="email"
+          required
+          autocomplete="username"
+          placeholder="Correo electrónico">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input
+          type="password"
+          formControlName="password"
+          required
+          autocomplete="current-password"
+          placeholder="Contraseña">
+        </ion-input>
+      </ion-item>
+
+      <ion-button expand="block" type="submit" [disabled]="loginForm.invalid">
+        Ingresar
+      </ion-button>
+
+    </form>
+
+    <ion-text class="registro-link">
+      ¿No tienes cuenta?
+      <a routerLink="/registro">Regístrate aquí</a>
+    </ion-text>
+  </div>
+</ion-content>

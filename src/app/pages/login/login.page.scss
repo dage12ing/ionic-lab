@@ -1,0 +1,148 @@
+ion-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f9f9f9;
+  padding: 0 !important;
+}
+
+.login-container {
+  background-color: #fff;
+  width: 100%;
+  max-width: 375px;
+  padding: 38px 22px 32px 22px;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(44,78,90,0.13);
+  text-align: center;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  width: 250px;
+  margin-bottom: 14px;
+}
+
+.login-container h2 {
+  color: #2e7d32;
+  margin-bottom: 16px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.login-container p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+/* Inputs visuals modernos */
+ion-item {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0 auto;
+  --background: #fafafa;
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  border-radius: 11px;
+  box-shadow: 0 1.5px 8px rgba(44, 78, 90, 0.11);
+  border: 1.5px solid #e0e0e0;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+ion-item.ion-focused,
+ion-item:focus-within {
+  --background: #fff;
+  border-color: #43a047;
+  box-shadow: 0 3px 12px rgba(67, 160, 71, 0.07);
+}
+
+ion-label {
+  font-size: 1rem;
+  color: #444;
+}
+
+ion-input {
+  font-size: 16px;
+  background: transparent;
+  padding: 12px 0;
+  --highlight-color-focused: #43a047;
+  caret-color: #2e7d32;
+}
+
+/* Eliminar borde inferior flotante Ionic */
+.item-has-focus .item-native,
+ion-item .native-input.sc-ion-input-md {
+  border-bottom: none !important;
+}
+
+/* Botón principal */
+ion-button {
+  width: 100%;
+  margin: 28px auto 0 auto;
+  --background: #43a047;
+  --border-radius: 11px;
+  font-weight: 600;
+  font-size: 1.14rem;
+  color: #fff;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(44,78,90,0.11);
+  border: none;
+  transition: background 0.3s;
+}
+
+ion-button:hover {
+  filter: brightness(0.93);
+}
+
+/* Link registro adaptado */
+.registro-link {
+  margin-top: 22px;
+  font-size: 1rem;
+  display: block;
+  color: #222;
+  a {
+    color: #43a047;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+  a:hover {
+    color: #2e7d32;
+    text-decoration: underline;
+  }
+}
+
+/* Footer si lo usas */
+.footer {
+  margin-top: 20px;
+  color: #777;
+  font-size: 12px;
+}
+
+/* Responsive mobile */
+@media (max-width: 500px) {
+  .login-container {
+    padding: 18px 6px;
+    border-radius: 12px;
+    max-width: 98vw;
+  }
+  .logo {
+    width: 53px;
+  }
+  .login-container h2 {
+    font-size: 1.24rem;
+  }
+  ion-button {
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+  ion-item {
+    max-width: 97vw;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+}
