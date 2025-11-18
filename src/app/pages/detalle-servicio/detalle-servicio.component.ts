@@ -1,14 +1,13 @@
 import { Component, inject, OnInit, signal } from '@angular/core';
-import { HeaderComponent } from "src/app/components/header/header.component";
 import { BreadcrumbComponent } from "src/app/components/breadcrumb/breadcrumb.component";
+import { HeaderComponent } from "src/app/components/header/header.component";
 import { GetServices } from 'src/app/services/get-services';
-import { FloatingButtonComponent } from "src/app/components/floating-button/floating-button.component";
 
 @Component({
   selector: 'app-detalle-servicio',
   templateUrl: './detalle-servicio.component.html',
   styleUrls: ['./detalle-servicio.component.scss'],
-  imports: [HeaderComponent, BreadcrumbComponent, FloatingButtonComponent],
+  imports: [HeaderComponent, BreadcrumbComponent],
 })
 export class DetalleServicioComponent  implements OnInit {
   public serviceId = signal(null as number | null);

@@ -1,5 +1,22 @@
-<p>Página de bienvenida</p>
-<div>
-  <a routerLink="/login">Iniciar sesión</a>
-  <a routerLink="/registro">Registrarse</a>
-</div>
+<ion-content class="ion-padding">
+  <div class="header">
+    <h1>Servicios de Limpieza a tu Alcance</h1>
+    <p>Una plataforma moderna, segura y confiable para contratar servicios de aseo, mantenimiento y limpieza tanto para hogares como para empresas.</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>¿Por qué elegirnos?</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ul>
+        <li>Contrata servicios de forma rápida y segura.</li>
+        <li>Profesionales verificados y capacitados.</li>
+        <li>Transparencia en precios y disponibilidad.</li>
+        <li>Ideal para familias, apartamentos u oficinas.</li>
+      </ul>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="block" color="primary" (click)="irCatalogo()">Ver Servicios Disponibles</ion-button>
+</ion-content>
