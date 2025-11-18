@@ -1,16 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { IonButton, IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonContent } from "@ionic/angular/standalone";
 
 @Component({
   selector: 'app-bienvenida',
   templateUrl: './bienvenida.component.html',
   styleUrls: ['./bienvenida.component.scss'],
-  imports: [RouterLink],
+  imports: [IonCardHeader, IonCardTitle, IonCard, IonCardContent, IonButton, IonContent],
 })
-export class BienvenidaComponent  implements OnInit {
+export class BienvenidaComponent {
 
-  constructor() { }
+  constructor(private router: Router) {}
 
-  ngOnInit() {}
+  irCatalogo() {
+    this.router.navigate(['/servicios']);
+  }
 
 }
