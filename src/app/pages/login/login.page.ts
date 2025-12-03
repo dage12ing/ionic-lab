@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms'; // Importa ReactiveFormsModule
-import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonText } from '@ionic/angular/standalone';
-import { RouterLink, Router } from '@angular/router';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { IonButton, IonContent, IonInput, IonItem, IonText } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-login',
@@ -11,15 +11,15 @@ import { RouterLink, Router } from '@angular/router';
   standalone: true,
   imports: [
     CommonModule,
-    ReactiveFormsModule, // Importa ReactiveFormsModule aquí
-    IonText, IonButton, IonLabel, IonItem, IonContent, IonHeader, IonTitle, IonToolbar,
-    RouterLink,
+    ReactiveFormsModule,
+    IonText, IonButton, IonInput, IonItem, IonContent,
   ]
 })
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
+  private router = inject(Router);
 
-  constructor(private fb: FormBuilder, private router: Router) {
+  constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -29,23 +29,14 @@ export class LoginPage implements OnInit {
   ngOnInit() {}
 
   onLogin() {
+    this.router.navigate(['/servicios']);
     if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-
-      if (email === 'admin' && password === 'admin') {
-        console.log('Acceso permitido: usuario administrador');
-        alert('Bienvenido Administrador');
-        // Aquí podrías agregar navegación si luego añades Router
-        // this.router.navigate(['/home']);
-      } else {
-        console.log('Credenciales incorrectas');
-        alert('Usuario o contraseña incorrectos');
-      }
+      // Aquí va la lógica para autenticación
+      console.log('Login data:', this.loginForm.value);
     }
   }
 
   navigateRegister() {
-    // Navegar a la página de registro
-    this.router.navigate(['/registro']); // Asegúrate de que esta ruta exista en tu app-routing
+    this.router.navigate(['/registro']);
   }
 }
