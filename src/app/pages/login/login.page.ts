@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms'; // Importa ReactiveFormsModule
 import { IonContent, IonHeader, IonTitle, IonToolbar, IonItem, IonLabel, IonButton, IonText } from '@ionic/angular/standalone';
-import { RouterLink } from '@angular/router';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -19,7 +19,7 @@ import { RouterLink } from '@angular/router';
 export class LoginPage implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router: Router) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
@@ -42,5 +42,10 @@ export class LoginPage implements OnInit {
         alert('Usuario o contraseña incorrectos');
       }
     }
+  }
+
+  navigateRegister() {
+    // Navegar a la página de registro
+    this.router.navigate(['/registro']); // Asegúrate de que esta ruta exista en tu app-routing
   }
 }
