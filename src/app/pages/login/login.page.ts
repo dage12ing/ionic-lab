@@ -30,8 +30,17 @@ export class LoginPage implements OnInit {
 
   onLogin() {
     if (this.loginForm.valid) {
-      // Aquí va la lógica para autenticación
-      console.log('Login data:', this.loginForm.value);
+      const { email, password } = this.loginForm.value;
+
+      if (email === 'admin' && password === 'admin') {
+        console.log('Acceso permitido: usuario administrador');
+        alert('Bienvenido Administrador');
+        // Aquí podrías agregar navegación si luego añades Router
+        // this.router.navigate(['/home']);
+      } else {
+        console.log('Credenciales incorrectas');
+        alert('Usuario o contraseña incorrectos');
+      }
     }
   }
 }
